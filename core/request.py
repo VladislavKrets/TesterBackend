@@ -72,7 +72,8 @@ def main(SAMPLE_SPREADSHEET_ID, SAMPLE_RANGE_NAME):
                                                                                                     row['values'][1][
                                                                                                         'userEnteredValue'] else \
                 row['boolValue']
-                answer = Answer(answer_value,
+                if answer_value:
+                    answer = Answer(answer_value,
                                 is_right=('red' in color and color['red'] == 1))
                 currentAnswers.append(answer)
         currentQuestion.answers = currentAnswers
